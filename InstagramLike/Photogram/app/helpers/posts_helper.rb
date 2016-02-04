@@ -11,15 +11,6 @@ module PostsHelper
       'glyphicon-heart-empty'
     end
 
-    def already_likes?(post)
-      self.likes.find(:all, :conditions => ['post_id = ?', post.id]).size > 0
-    end
-
-    def unliked_post(post)
-      return 'glyphicon-heart-empty' if current_user.voted_for? post
-      'glyphicon-heart'
-    end
-
     private
 
     def list_likers(votes)

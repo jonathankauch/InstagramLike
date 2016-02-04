@@ -50,15 +50,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def unlike
-    if @post.liked_by current_user
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.js
-      end
-    end
-  end
-
   private
 
     def post_params
